@@ -139,7 +139,7 @@ html,body{
   width:max-content;
   margin:4rem auto;          /* keeps everything centered */
 }
-.cta-wrap{position:relative;width:max-content;margin:4rem auto;}
+
 
 /* shared cat sprite styles */
 .cat-sprite{
@@ -157,9 +157,6 @@ html,body{
 }
 
 /* individual positions */
-.cat-left   { left:-120px;  bottom:-20px; background-image:url("Assets/cat-left.png");   }
-.cat-right  { right:-120px; bottom:-20px; background-image:url("Assets/cat-right.png");  }
-.cat-top    { left:50%;     top:-140px;   transform:translateX(-50%); background-image:url("Assets/cat-top.png"); }
 /* exact positions & images — update filenames if needed */
 .cat-left  {left:-120px;bottom:-20px;background-image:url("Assets/cat-left.png");}
 .cat-right {right:-120px;bottom:-20px;background-image:url("Assets/cat-right.png");}
@@ -167,10 +164,10 @@ html,body{
             background-image:url("Assets/cat-top.png");}
 
 
- .cat-top { left:45%;      
-            top:-110px;    
-            transform:translateX(-50%);
-            background-image:url("Assets/cat-top.png"); } 
+.cat-top{
+  width:100px;
+  height:100px;
+}
   
 /* gentle float animation */
 @keyframes bob{
