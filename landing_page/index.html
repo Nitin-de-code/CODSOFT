@@ -1,101 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Landing Page – Adopt Cats</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Landing Page – Adopt Cats</title>
 
 <style>
-/* ---------- globals --------------------------------------------------- */
-:root{
-  --neon:linear-gradient(135deg,#00ffe3,#00d2ff,#2e8bff,#8260ff,#bf5fff,#ff5fd1,#ff8b7f);
-}
-html,body{
-  margin:0;
-  font-family:serif;
-  background:#262626;
-  overflow-x:hidden;                           /* no horizontal scroll */
-  cursor:
-    url("https://nitin-de-code.github.io/CODSOFT/landing_page/Assets/Cute%20Cat%20Paw%20Animated--cursor--SweezyCursors..ani") 0 0,
-    url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAABFElEQVR4Xu3YMQ6CQBBF0fMvEFa0oX9HeJYQxLeQ0Yr1VosC7E/qsgSvujo+PjtF8yD9YQIABwmQmznk9R3uLdSSkgFJGTwa2iMgyHlDkxEDh4P7Mo0fL+zE0HRt8Tn+Xq1n+tyU2ed3+SAeq4AiJQC4ET9PwUJB+1BQh8iCuSnUgAhdjsPzJjFPO1cEIADBBZh8KgRC0dk32gCPzuO8EAIC3CAfQDhZBt1YBOhwYwMXnYQW2wIDejNNmBGLDKXqwF0gRwQTDhQH3D3pgY4cEoM6A1iAc2iMvE0A1YgLYDL1MzCLARDBhfMqYBF0/QAWxgD7Ah0GJWqfL2IBB8x6tl8uYmC0GRyqayQI60F1v6wRe7pX2YYCr+q3gD5NHiKqcbTEAAAAASUVORK5CYII=") 0 0,
-    auto;
-}
-@media(any-pointer:coarse){html,body{cursor:auto;}}
-
-/* ---------- hero ------------------------------------------------------ */
-.hero{
-  height:40vh;
-  background:url("https://wallpapercat.com/w/full/c/d/2/24231-1920x1080-desktop-full-hd-cat-wallpaper-photo.jpg") center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-}
-.hero h1{color:#fff;font-size:2.5rem;text-shadow:0 0 10px #000c;}
-
-/* ---------- article text --------------------------------------------- */
-.content{padding:2rem;column-count:3;column-gap:2rem;line-height:1.6;text-align:justify;color:#fff;}
-@media(max-width:800px){.content{column-count:2;}}
-@media(max-width:500px){.content{column-count:1;}}
-
-/* ---------- CTA button + glow ---------------------------------------- */
-@keyframes cycle{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
-
-.cta-wrap{position:relative;width:max-content;margin:4rem auto;}
-
-.glow-clip{position:relative;overflow:hidden;border-radius:12px;}     /* clips blur */
-
-.cta-btn{
-  display:block;padding:1rem 3rem;margin:0;
-  font-size:1.8rem;color:#fff;border:none;border-radius:12px;
-  background:var(--neon);background-size:400%;
-  animation:cycle 8s linear infinite -2s;
-  cursor:pointer;z-index:1;              /* sits above cats */
-}
-.cta-btn::before{
-  content:"";position:absolute;inset:0;padding:2px;border-radius:inherit;
-  background:var(--neon);background-size:400%;filter:blur(8px);
-  animation:cycle 8s linear infinite;opacity:0;transition:.3s;z-index:-1;
-  box-sizing:border-box;
-}
-.cta-btn:hover::before,
-.cta-btn:focus-visible::before{opacity:1}
-
-/* ---------- cat sprites ---------------------------------------------- */
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px) scale(1.03)}}
-
-.cat-sprite{
-  position:absolute;width:140px;height:140px;background-size:contain;background-repeat:no-repeat;
-  pointer-events:none;animation:bob 4s ease-in-out infinite;opacity:.9;z-index:2;
+:root {
+  --neon: linear-gradient(135deg,
+    #00ffe3, #00d2ff, #2e8bff, #8260ff,
+    #bf5fff, #ff5fd1, #ff8b7f);
+  background-color: #262626;
 }
 
-/* adjust paths if your filenames differ */
-.cat-left  {left:-100px;bottom:-20px; background-image:url("Assets/cat-left.png");}
-.cat-right {right:-100px;bottom:-20px; background-image:url("Assets/cat-right.png");}
-/* top cat nudged 10 px left (≈5 %) and 30 px down */
-.cat-top   {left:45%;  top:-80px;transform:translateX(-50%);
-            background-image:url("Assets/cat-top.png");}
+@keyframes cycle {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-.cta-wrap:hover .cat-sprite{filter:drop-shadow(0 0 6px #ff80ff) drop-shadow(0 0 6px #00d2ff);}
-</style>
-</head>
-
-<body>
-  <header class="hero">
-    <h1>Adopt a Friend Today</h1>
-  </header>
-
-  <section class="content">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat…
-  </section>
-
-  <div class="cta-wrap">
-    <div class="glow-clip">
-      <button class="cta-btn"><span>ADOPT NOW</span></button>
-    </div>
-
-    <div class="cat-sprite cat-left"></div>
-    <div class="cat-sprite cat-right"></div>
-    <div class="cat-sprite cat-top"></div>
-  </div>
-</body>
-</html>
+html, body {
+  margin: 0;
+  font-family: serif;
+  overflow-x: hidden;
+  cursor: url("https://nitin-de-code.github.io/CODSOFT/landing_page/Assets/Cute%20Cat%20Paw%20Animated--cursor--SweezyCursors..ani") 0 0,
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAABFElEQVR4Xu3YMQ6CQBBF0fMvEFa0oX9HeJYQxLeQ0Yr1VosC7E/qsgSvujo+PjtF8yD9YQIABwmQmznk9R3uLdSSk
 
