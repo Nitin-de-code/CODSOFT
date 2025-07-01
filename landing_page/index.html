@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Landing Page – Adopt Cats</title>
+
+<style>
+
+:root{
+  
+  --neon: linear-gradient(135deg,
+    #00ffe3, #00d2ff, #2e8bff, #8260ff,
+    #bf5fff, #ff5fd1, #ff8b7f);
+    background-color:#262626;
+}
+
+@keyframes cycle{
+  0%   {background-position: 0% 50%;}
+  50%  {background-position:100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+html,body{
+  margin:0;
+  font-family:serif;
+  cursor:
+    url("assets/catpaw.ani") 0 0,
+    url("assets/catpaw.png") 0 0,
+    auto;
+}
+/* disable custom cursor on touch devices */
+@media (any-pointer:coarse){
+  html,body{cursor:auto;}
+}
+
+.hero{
+  height:40vh;
+  background:
+    url("https://wallpapercat.com/w/full/c/d/2/24231-1920x1080-desktop-full-hd-cat-wallpaper-photo.jpg")
+    center / cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero h1{
+  color:#fff;
+  font-size:2.5rem;
+  text-shadow:0 0 10px rgba(0,0,0,.7);
+}
+
+
+.content{
+  padding:2rem;
+  column-count:3;
+  column-gap:2rem;
+  line-height:1.6;
+  text-align:justify;
+}
+@media(max-width:800px){.content{column-count:2;}}
+@media(max-width:500px){.content{column-count:1;}}
+
+
+.cta-btn{
+  display:block;
+  margin:4rem auto 3rem;
+  padding:1rem 3rem;
+  font-size:1.8rem;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  position:relative;
+  cursor:pointer;
+  z-index:0;
+
+  
+  background:var(--neon);
+  background-size:400%;
+  animation:cycle 8s linear infinite -2s;
+}
+
+
+.cta-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;                  
+  padding:2px;              
+  border-radius:inherit;
+  background:var(--neon);
+  background-size:400%;
+  filter:blur(8px);
+  animation:cycle 8s linear infinite;
+  opacity:0;
+  transition:opacity .3s;
+  z-index:-1;
+  box-sizing:border-box;    
+}
+
+.cta-btn:hover::before,
+.cta-btn:focus-visible::before{opacity:1;}
+
+
+
+.cta-btn span{
+  color:#fff;          
+  background:none;
+}
+
+</style>
+</head>
+
+<body>
+  <header class="hero">
+    <h1>Adopt a Friend Today</h1>
+  </header>
+
+  <section class="content" style="color:white;">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
+    wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+    lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+    dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
+    dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
+    dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
+    feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option
+    congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+  </section>
+<button class="cta-btn"><span>ADOPT NOW</span></button>
+</body>
+</html>
