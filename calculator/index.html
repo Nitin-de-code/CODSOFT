@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>calculator</title>
+</head>
+<style>
+.box{
+height:50px;
+width:50px;
+position:relative;
+vertical-align: top;
+}
+.buttoncontainer{
+background-color:black;
+height:200px;
+width:200px;
+justify-content:center;
+align-items:center;
+transform:translate(450px,200px);
+}
+.displaycontainer{
+height:100px;
+width:200px;
+transform:translate(450px,200px);
+background-color:black;
+}
+
+
+#btn-clear-one,
+#btn-clear-all {
+  width: 100px; 
+}
+</style>
+<body>
+<div class="displaycontainer">
+<p id="display" style="margin:0; color:white; font-size:24px;" ></p>
+</div>
+<div class="buttoncontainer">
+<button class="box" data-value="7">7</button><button class="box" data-value="8">8</button><button class="box" data-value="9">9</button><button class="box" data-value="+">+</button>
+<button class="box" data-value="4">4</button><button class="box" data-value="5">5</button><button class="box" data-value="6">6</button><button class="box" data-value="-">-</button>
+<button class="box" data-value="1">1</button><button class="box" data-value="2">2</button><button class="box" data-value="3">3</button><button class="box" data-value="x">x</button>
+<button class="box" data-value=".">.</button><button class="box" data-value="0">0</button><button class="box" data-value="/">/</button><button class="box" data-value="=">=</button>
+<button class="box" id="btn-clear-one">⌫</button><button class="box" id="btn-clear-all">AC</button>
+</div>
+<script>
+
+
+
+
+
+let display=document.getElementById("display");
+document.querySelector(".buttoncontainer").addEventListener("click",function(e){
+if(e.target.tagName==="BUTTON"){
+
+
+ if (e.target.id === "btn-clear-all") {      
+      display.textContent = "";
+      return;                                  
+    }
+    if (e.target.id === "btn-clear-one") {      
+      display.textContent = display.textContent.slice(0, -1);
+      return;                                  
+    }
+
+
+let value=e.target.dataset.value;
+if (value == '=') {
+try{
+let expression=display.textContent.replace(/x/g,'*');
+let result= eval(expression);
+
+if(result === undefined || result === null || result =="")
+{display.textContent="Invalid Syntax"}
+else{
+display.textContent =result;
+}}
+catch (error) {
+    display.textContent = "Invalid Syntax";
+  }
+} else {
+      display.textContent += value;}
+ }
+});
+</script>
+</body>
+</html>
