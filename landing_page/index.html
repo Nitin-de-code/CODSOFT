@@ -105,6 +105,42 @@ html,body{
   background:none;
 }
 
+
+.cta-wrap{
+  position:relative;
+  width:max-content;
+  margin:4rem auto;          /* keeps everything centered */
+}
+
+/* shared cat sprite styles */
+.cat-sprite{
+  position:absolute;
+  width:140px;               /* adjust per image */
+  height:140px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  pointer-events:none;       /* clicks go to the button */
+  animation: bob 4s ease-in-out infinite;
+  opacity:.9;
+}
+
+/* individual positions */
+.cat-left   { left:-120px;  bottom:-20px; background-image:url("assets/cat-left.png");   }
+.cat-right  { right:-120px; bottom:-20px; background-image:url("assets/cat-right.png");  }
+.cat-top    { left:50%;     top:-140px;   transform:translateX(-50%); background-image:url("assets/cat-top.png"); }
+.cat-bottom { left:50%;     bottom:-160px;transform:translateX(-50%); background-image:url("assets/cat-bottom.png"); }
+
+/* gentle float animation */
+@keyframes bob{
+  0%,100%{ transform:translateY(0)     scale(1);   }
+  50%    { transform:translateY(-8px)  scale(1.03);}
+}
+
+/* optional: on hover, make cats glow a bit */
+.cta-wrap:hover .cat-sprite{
+  filter:drop-shadow(0 0 6px #ff80ff) drop-shadow(0 0 6px #00d2ff);
+}
+  
 </style>
 </head>
 
@@ -124,6 +160,15 @@ html,body{
     feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option
     congue nihil imperdiet doming id quod mazim placerat facer possim assum.
   </section>
-<button class="cta-btn"><span>ADOPT NOW</span></button>
+
+<div class="cta-wrap">
+  <button class="cta-btn"><span>ADOPT NOW</span></button>
+
+  <div class="cat-sprite cat-left"></div>
+  <div class="cat-sprite cat-right"></div>
+  <div class="cat-sprite cat-top"></div>
+  <div class="cat-sprite cat-bottom"></div>
+</div>
+  
 </body>
 </html>
