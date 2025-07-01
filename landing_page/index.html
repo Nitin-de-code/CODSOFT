@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>More actions
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -35,12 +35,7 @@ html,body{
   background-color:#262626;
   overflow-x:hidden;                               /* no horizontal bar  */
   cursor:
-    url("https://nitin-de-code.github.io/CODSOFT/landing_page/Assets/Cute%20Cat%20Paw%20Animated--cursor--SweezyCursors..ani") 0 0,
-    url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAABFElEQVR4Xu3YMQ6CQBBF0fMvEFa0oX9HeJYQxLeQ0Yr1VosC7E/qsgSvujo+PjtF8yD9YQIABwmQmznk9R3uLdSSkgFJGTwa2iMgyHlDkxEDh4P7Mo0fL+zE0HRt8Tn+Xq1n+tyU2ed3+SAeq4AiJQC4ET9PwUJB+1BQh8iCuSnUgAhdjsPzJjFPO1cEIADBBZh8KgRC0dk32gCPzuO8EAIC3CAfQDhZBt1YBOhwYwMXnYQW2wIDejNNmBGLDKXqwF0gRwQTDhQH3D3pgY4cEoM6A1iAc2iMvE0A1YgLYDL1MzCLARDBhfMqYBF0/QAWxgD7Ah0GJWqfL2IBB8x6tl8uYmC0GRyqayQI60F1v6wRe7pX2YYCr+q3gD5NHiKqcbTEAAAAASUVORK5CYII=") 0 0,
-    auto;
-}
-@media(any-pointer:coarse){html,body{cursor:auto;}}
-
+@@ -28,12 +44,31 @@
 /* ---------------- hero ---------------- */
 .hero{
   height:40vh;
@@ -72,9 +67,7 @@ html,body{
 /* ---------------- content columns ---------------- */
 .content{padding:2rem;column-count:3;column-gap:2rem;line-height:1.6;text-align:justify;}
 @media(max-width:800px){.content{column-count:2;}}
-@media(max-width:500px){.content{column-count:1;}}
-
-/* ---------------- CTA button ---------------- */
+@@ -43,18 +78,48 @@
 @keyframes cycle{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
 
 .cta-btn{
@@ -123,11 +116,11 @@ html,body{
 .cta-btn:hover::before,
 .cta-btn:focus-visible::before{opacity:1;}
 
-.cta-btn span{color:#fff;background:none}
-
+@@ -63,56 +128,90 @@
 /* ---------------- cat sprites ---------------- */
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px) scale(1.03)}}
 
+.cta-wrap{position:relative;width:max-content;margin:4rem auto;}
 .cta-btn span{
   color:#fff;          
   background:none;
@@ -137,9 +130,11 @@ html,body{
 .cta-wrap{
   position:relative;
   width:max-content;
+  margin:4rem auto;
+  overflow:hidden;
   margin:4rem auto;          /* keeps everything centered */
 }
-
+.cta-wrap{position:relative;width:max-content;margin:4rem auto;}
 
 /* shared cat sprite styles */
 .cat-sprite{
@@ -157,6 +152,9 @@ html,body{
 }
 
 /* individual positions */
+.cat-left   { left:-120px;  bottom:-20px; background-image:url("Assets/cat-left.png");   }
+.cat-right  { right:-120px; bottom:-20px; background-image:url("Assets/cat-right.png");  }
+.cat-top    { left:50%;     top:-140px;   transform:translateX(-50%); background-image:url("Assets/cat-top.png"); }
 /* exact positions & images — update filenames if needed */
 .cat-left  {left:-120px;bottom:-20px;background-image:url("Assets/cat-left.png");}
 .cat-right {right:-120px;bottom:-20px;background-image:url("Assets/cat-right.png");}
@@ -164,7 +162,11 @@ html,body{
             background-image:url("Assets/cat-top.png");}
 
 
-.cat-top{
+ .cat-top { left:45%;      
+            top:-110px;    
+            transform:translateX(-50%);
+            background-image:url("Assets/cat-top.png"); } 
+  .cat-top{
   width:100px;
   height:100px;
 }
