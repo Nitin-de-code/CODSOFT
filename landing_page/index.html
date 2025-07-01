@@ -55,7 +55,9 @@ html,body{
   display:flex;align-items:center;justify-content:center;
 }
 .hero h1{color:#fff;font-size:2.5rem;text-shadow:0 0 10px #000c;}
-
+.hero h1{
+  background:none;          /* ensure transparent */
+}
 
 .content{
   padding:2rem;
@@ -169,6 +171,14 @@ html,body{
   .cat-top{
   width:100px;
   height:100px;
+}
+  .cat-top{
+  left:45%;
+  top:-70px;                
+  width:100px;
+  height:100px;
+  transform:translateX(-50%);
+  background-image:url("Assets/cat-top.png");
 }
   
 /* gentle float animation */
