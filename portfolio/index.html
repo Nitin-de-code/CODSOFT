@@ -1,0 +1,117 @@
+<!DOCKTYPE html>
+<html>
+<style>
+.middle{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+transition:transform 3s ease;
+}
+.circle{
+height:300px;
+width:400px;
+border-radius:50%;
+background-color:grey;
+align-items:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.container{
+position:relative;
+display:inline-block;
+user-select:none;
+overflow: visible;
+}
+.hidden{
+ position: absolute;
+ top: 0;
+ left: 300%;
+ opacity: 0;
+ visibility: hidden;
+ transition: opacity 0.3s ease;
+}
+h2:hover + .hidden{
+opacity:1;
+visibility:visible;
+}
+.section-list{
+display:flex;
+flex-direction:column;
+gap:20px;
+border:1px dotted grey;
+padding:1px;
+width: 100px;   
+overflow: visible;
+height: auto;
+}
+h2{
+display: inline-block;
+cursor:pointer;
+margin:0 0 60px 0;
+padding:0;
+}
+.section-list:hover ~ .middle  {
+  transform: translateX(400%) rotate(1080deg);
+}
+.main{
+position:relative;
+}
+</style>
+<body style="background-color:black;color:white;">
+<div class="main">
+<div class="section-list">
+<div class="container">
+<h2>About Me</h2>
+<div class="hidden">
+<p>i am learning web development, game development currently and am in the beginning stages of learning these two things,i also like to experiment with styling with css, and am constantly trying to improve in that area </p>
+</div>
+</div>
+<div class="container">
+<h2>Skills Section</h2>
+<div class="hidden">
+<p>These are the computer language's i am proficient in</p>
+<ul>
+<li>C++</li>
+<li>Python</li>
+<li>Java</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+<p>Languages i am proficient in and those that i am learning</p>
+<ul>
+<li>English</li>
+<li>French</li>
+<li>Japanese</li>
+</ul>
+</div>
+</div>
+</div>
+<h2>Projects</h2>
+<h3>WEB-QUIZ Application</h3>
+
+<h4>Screenshots</h4>
+<img src="C:\Users\Nitin\Pictures\Screenshots\Screenshot (93).png" width="600" height="400">
+<img src="C:\Users\Nitin\Pictures\Screenshots\Screenshot (99).png" width="600" height="400">
+<img src="C:\Users\Nitin\Pictures\Screenshots\Screenshot (100).png" width="600" height="400"> 
+<p>this is a web-based quiz application,within this quiz it offers 7 categories to take the quiz from,each category has 50 questions of which 10 are randomly selected and asked,the scores then can be saved and you can view past score's in the highscores tab and compete againt yourself</p>
+<a href="https://nitin-de-code.github.io/QUIZ-APPLICATION/">a web quiz application</a>
+<h2>Resume</h2>
+
+<a href=" ">My resume download</a>
+<div class="middle">
+<div class="circle">
+<H1 style="text-align:center;color:black">Hi, I am Nitin</H1>
+<p style="text-align:center;">i am a student currently pursuing a Bachelor of Engineering degree in computer science and engineering</p>
+</div>
+</div>
+</div>
+<h2>Contact Me</h2>
+<a href="mailto:nitin7.7.6.2006@gmail.com?subject=im%20here%20to%20speak">nitin7.7.6.2006@gmail.com</a>
+<footer>
+<p>Copyright &copy;2025 portfolio.All rights reserved</p>
+</footer>
+</body>
+</html>
